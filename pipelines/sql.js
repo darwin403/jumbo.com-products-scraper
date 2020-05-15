@@ -56,11 +56,11 @@ class MSSQL {
                 retailSet bit,
                 brand nvarchar(255),
                 category nvarchar(255),
-                prices nvarchar(max) CONSTRAINT [prices should be formatted as JSON] CHECK (ISJSON(prices)=1),
-                quantityOptions nvarchar(max) CONSTRAINT [quantityOptions should be formatted as JSON] CHECK (ISJSON(quantityOptions)=1),
-                primaryBadge nvarchar(max) CONSTRAINT [primaryBadge should be formatted as JSON] CHECK (ISJSON(primaryBadge)=1),
-                secondaryBadges nvarchar(max) CONSTRAINT [secondaryBadges should be formatted as JSON] CHECK (ISJSON(secondaryBadges)=1),
-                promotions nvarchar(max) CONSTRAINT [promotions should be formatted as JSON] CHECK (ISJSON(promotions)=1)
+                prices nvarchar(max),
+                quantityOptions nvarchar(max),
+                primaryBadge nvarchar(max),
+                secondaryBadges nvarchar(max),
+                promotions nvarchar(max)
               );
         `;
         await this.pool.query(CREATE_DB);
