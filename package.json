@@ -1,0 +1,19 @@
+{
+  "name": "freelancer-puppeteer-jumbo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scrape.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "mssql": "^6.2.0",
+    "node-fetch": "^2.6.0",
+    "puppeteer-extra": "^3.1.9",
+    "puppeteer-extra-plugin-stealth": "^2.4.9",
+    "request": "^2.88.2"
+  }
+}
