@@ -18,7 +18,7 @@ const enabledPipelines = {
 async function start({ userAgent = "", cookies = "" }) {
   const maxBadRequests = 3; // the maximum requests after which scraping stops
   let currentBadRequests = 0;
-  let page = 0; // the page to start scraping from
+  let page = 740; // the page to start scraping from
 
   while (currentBadRequests < maxBadRequests && page <= 1000) {
     // fetch products
@@ -108,7 +108,7 @@ async function fetch_products({ userAgent = "", cookies = "", page = 0 }) {
       );
     }
   } catch (error) {
-    console.error("Page:", page, "Fetch failed!", error);
+    console.error("Page:", page, "Fetch failed!");
   }
 
   return products;
@@ -133,7 +133,7 @@ puppeteer
       .join("; ");
 
     await browser.close();
-    
+
     // start scraping with the cookies and user agent.
     start({ cookies, userAgent });
   })
