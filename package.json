@@ -12,6 +12,7 @@
     "bluebird": "^3.7.2",
     "mssql": "^6.2.0",
     "node-fetch": "^2.6.0",
+    "puppeteer": "^3.0.4",
     "puppeteer-extra": "^3.1.9",
     "puppeteer-extra-plugin-stealth": "^2.4.9",
     "request": "^2.88.2"
