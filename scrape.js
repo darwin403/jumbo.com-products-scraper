@@ -3,13 +3,13 @@ const fetch = require("node-fetch");
 const puppeteer = require("puppeteer-extra");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 
-const saveProducts = require("./pipelines/file");
+const saveFile = require("./pipelines/file");
 const saveImages = require("./pipelines/image");
 const saveSQL = require("./pipelines/sql");
 
 // pipelines that will be used after each set of products are scraped
 const enabledPipelines = {
-  products: true, // whether to save products to dumps.jl
+  file: true, // whether to save products to dumps.jl
   images: false, // whether to download images for each product scraped
   SQL: false, // whether to save products to Microsoft SQL Server
 };
@@ -29,8 +29,8 @@ async function start({ userAgent = "", cookies = "" }) {
     if (count !== 0) {
       currentBadRequests = 0;
 
-      if (enabledPipelines.products) {
-        saveProducts(products)
+      if (enabledPipelines.file) {
+        saveFile(products)
           .then(() => {
             console.log(`File Pipeline: Products saved: ${count}`);
           })
