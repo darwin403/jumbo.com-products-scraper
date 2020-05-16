@@ -12,7 +12,10 @@ if (fs.existsSync(location)) fs.unlinkSync(location);
 function saveProducts(products = []) {
   return Promise.map(products, function (product) {
     return new Promise((resolve, reject) => {
-      fs.appendFile(location, JSON.stringify(product) + "\r\n", resolve);
+      fs.appendFile(location, JSON.stringify(product) + "\r\n", function (err) {
+        if (err) return reject(err);
+        resolve();
+      });
     });
   });
 }
